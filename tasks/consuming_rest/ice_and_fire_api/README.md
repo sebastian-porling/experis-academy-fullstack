@@ -12,6 +12,10 @@ If not using a IDEA do the following when in the out folder:
 java Application
 or
 java Application <id>
+or
+java -jar IcaAndFireAPI.jar
+or
+java -jar IceAndFireAPI.jar <id>
 ```
 ## Motivation
 
