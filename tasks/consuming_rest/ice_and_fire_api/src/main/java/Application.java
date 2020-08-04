@@ -46,25 +46,28 @@ public class Application {
     private static void printPovFromBantaBooks() {
         Set<Book> books = IceAndFireAPI.getBantamBooks();
         printSeperator();
-        for (Book book : books) {
-            System.out.print(book.name.subSequence(0, 16) + "\t");
-        }
-        System.out.println();
         Book[] booksArray = new Book[books.size()];
         int k = 0;
         for (Book book : books) {
             booksArray[k++] = book;
         }
         int maxLength = maxPovListSize(books);
-        for (int j = 0; j < maxLength; j++) {
-            for (Book book : booksArray) {
-                if (book.povCharacters.length > j) {
-                    String output = IceAndFireAPI.getCharacter(book.povCharacters[j]).name;
-                    String tab = output.length() < 12 ? output.length() < 8 ? "\t\t\t\t" : "\t\t\t" : output.length() > 15 ? "\t" : "\t\t";
-                    System.out.print(IceAndFireAPI.getCharacter(book.povCharacters[j]).name + tab);
+        String[][] table = new String[maxLength][booksArray.length];
+        for (int i = 0; i < booksArray.length; i++) {
+            table[0][i] = booksArray[i].name;
+        }
+        for (int j = 1; j < maxLength; j++) {
+            for (int i = 0; i < booksArray.length; i++) {
+                if (booksArray[i].povCharacters.length > j) {
+                    table[j][i] = IceAndFireAPI.getCharacter(booksArray[i].povCharacters[j]).name;
                 } else {
-                    System.out.print("\t\t\t\t\t");
+                    table[j][i] = "";
                 }
+            }
+        }
+        for (int i = 0; i < maxLength; i++) {
+            for (int j = 0; j < booksArray.length; j++) {
+                System.out.printf("%-22s", table[i][j]);
             }
             System.out.println();
         }
@@ -101,7 +104,7 @@ public class Application {
     public static boolean userWantsSwornMembers(){
         scanner = new Scanner(System.in);
         String userInput = "";
-        System.out.println("\n Do you want to see all sworn members of the characters house? (y/n): ");
+        System.out.println("\nDo you want to see all sworn members of the characters house? (y/n): ");
         userInput = scanner.nextLine();
         return userInput.equals("y");
     }
