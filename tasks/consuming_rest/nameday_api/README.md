@@ -12,6 +12,8 @@ javac -d ../../../out/ .*java
 Either with IntelliJ or do this while in out:
 ```bash
 java Application.java
+or
+java -jar NamedayAPI.jar
 ```
 
 ## Motivation
