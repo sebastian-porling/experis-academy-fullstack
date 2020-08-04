@@ -2,3 +2,6 @@
 *out/*
 Scrap.java
 OCA/*
+*target/*
+*.idea/*
+*META-INF/*
