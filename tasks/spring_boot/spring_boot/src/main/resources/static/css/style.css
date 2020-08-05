@@ -1,0 +1,18 @@
+body {
+    margin: 0 auto;
+}
+.media {
+    margin-top: 200px;
+}
+.media-body {
+    margin-left: 10px;
+}
+#greetingText {
+    margin-top: 20px;
+}
+#greetingForm, #reverseGreetingForm {
+    margin-top: 50px;
+}
+.container {
+    max-width: 600px;
+}

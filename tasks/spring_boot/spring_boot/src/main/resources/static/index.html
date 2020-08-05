@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Awesome Web Page!</title>
+
+    <!-- Bootstrap and jQuery imports -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- Custom css and js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Place holder for image and some text -->
+    <div class="media">
+        <img src="images/sebastian.png" class="mr-r" alt="Picture of Sebastian Porling" height="64" width="64">
+        <div class="media-body">
+            <h5 class="mt-0">Spring Boot Task</h5>
+            Hello There! This webpage and webserver is a solution made by <a href="https://github.com/sebastian-porling">Sebastian Porling</a>
+        </div>
+    </div>
+
+    <!-- Form for getting greeting -->
+    <form id="greetingForm" name="greetingForm">
+        <h1>Generate a greeting!</h1>
+        <div class="form-group">
+            <label for="nameTextBox">Enter name: </label>
+            <input type="text" class="form-control" id="nameTextBox" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Get greeting!</button>
+    </form>
+
+    <h2 id="greetingText" hidden></h2>
+
+    <!-- Form for reversing greeting -->
+    <form hidden name="reverseGreetingForm" id="reverseGreetingForm">
+        <button type="submit" class="btn btn-primary">Reverse greeting!</button>
+    </form>
+</div>
+
+</body>
+</html>
