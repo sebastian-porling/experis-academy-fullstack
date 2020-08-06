@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Meta and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Check for Palindromes!</title>
+
+    <!-- Bootstrap and jQuery imports -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- Custom css and js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container" id="main">
+        <!-- Place holder for image and some text -->
+        <div class="media">
+            <img src="images/sebastian.png" class="mr-r" alt="Picture of Sebastian Porling" height="64" width="64">
+            <div class="media-body">
+                <h5 class="mt-0">Thymeleaf Task</h5>
+                Hello There! This palindrome website is made by <a href="https://github.com/sebastian-porling">Sebastian Porling</a>
+            </div>
+        </div>
+
+        <!-- User input form -->
+        <h1>Palindrome<span class="reverse">emordnilaP</span></h1>
+        <form id="palindrome-form" action="/getPalindrome" method="get">
+            <div class="form-group">
+                <label for="textBox">Enter words, sequence of characters or numbers seperated by a space (' '):</label>
+                <textarea id="textBox" class="form-control" name="sequences" required></textarea>
+                <button type="submit" class="btn btn-primary">Check!</button>
+            </div>
+        </form>
+
+        <!--
+        The resulting table of palindromes
+        Doesn't show if hideTable is true.
+        -->
+        <div id="results" th:hidden="${hideTable}">
+            <h2>Results: </h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">text</th>
+                    <th scope="col">is palindrome</th>
+                    <th scope="col">palindrome</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sequence : ${sequences}">
+                    <th scope="row" th:text="${sequence.text}"></th>
+                    <td th:text="${sequence.isPalindrome ? 'yes' : 'no'}"></td>
+                    <td th:text="${sequence.palindrome}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
