@@ -1,0 +1,3 @@
+[submodule "tasks/contact_application"]
+	path = tasks/contact_application
+	url = https://github.com/sebastian-porling/contact_application
