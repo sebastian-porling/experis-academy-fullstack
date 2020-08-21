@@ -1,3 +1,6 @@
 [submodule "tasks/contact_application"]
 	path = tasks/contact_application
 	url = https://github.com/sebastian-porling/contact_application
+[submodule "tasks/spring_session/session"]
+	path = tasks/spring_session/session
+	url = https://github.com/sebastian-porling/notice-board
