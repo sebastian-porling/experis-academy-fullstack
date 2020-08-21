@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Meta and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Register Page!</title>
+
+    <!-- Bootstrap and jQuery imports -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- Custom css and js -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <p th:text="${message}"></p>
+        <form th:action="@{/register}" th:method="POST" th:object="${user}">
+            <div class="form-group">
+                <label for="email" >Enter email</label>
+                <input type="email" class="form-control" placeholder="name@mail.com" th:field="*{email}" id="email" required>
+                <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

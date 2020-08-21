@@ -1,0 +1,19 @@
+body {
+    margin: 0 auto;
+}
+.media {
+    margin-top: 200px;
+}
+.media-body {
+    margin-left: 10px;
+}
+#button-group {
+    margin: 20px auto 0;
+}
+#register-btn {
+    margin-top: 20px;
+}
+.container {
+    margin-top: 200px;
+    max-width: 600px;
+}
